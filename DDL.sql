@@ -3,7 +3,7 @@ create schema dbserver;
 use dbserver;
 
 /* criando usuario user e atribuindo permissões*/
-create user 'celso'@'localhost' identified by 'pass123';
+create user 'user'@'localhost' identified by 'pass123';
 grant select, insert, delete, update on dbserver.* to user@'localhost';
 
 /*Criando tabelas*/
