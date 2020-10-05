@@ -24,4 +24,5 @@ create table pedidos{
     id_pedido bigint unsigned not null auto_increment,
     foreign key nome_produto_pedido (nome_produto) references produtos (id_produto) on delete restrict on update cascade,
     foreign key nome_produto_cliente (nome_cliente) references clientes (id_cliente) on delete restrict on update cascade
+    
 }
