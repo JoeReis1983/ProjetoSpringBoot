@@ -11,14 +11,16 @@ grant select, insert, delete, update on dbserver.* to user@'localhost';
 create table clientes(
     id_cliente bigint unsigned not null auto_increment,
     nome_cliente varchar(20) not null,
-    primary key (id_cliente),
+    primary key (id_produto),
+    primary key (nome_cliente),
     unique key uni_nome_cliente (nome_cliente)
 );
 create table produtos(
     id_produto bigint unsigned not null auto_increment,
     nome_produto varchar(20) not null,
     primary key (id_produto),
-    unique key uni_nome_produto (nome_produto),
+    primary key (nome_produto),
+    unique key uni_nome_produto (nome_produto)
 );
 create table pedidos(
     id_pedido bigint unsigned not null auto_increment,
