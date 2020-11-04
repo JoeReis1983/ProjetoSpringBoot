@@ -46,6 +46,14 @@ insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(101,1,2);
 insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(102,1,4);
 insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(103,1,6);
 
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(104,2,1);
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(105,2,3);
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(106,2,5);
+
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(107,3,7);
+
+
+
 
 
 
