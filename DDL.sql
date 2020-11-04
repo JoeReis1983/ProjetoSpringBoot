@@ -29,3 +29,24 @@ create table pedidos(
     foreign key id_pedido_produto (id_produto) references produtos (id_produto) on delete restrict on update cascade
     
 );
+
+insert into clientes( id_cliente,nome_cliente) VALUES(1,'Celso');
+insert into clientes( id_cliente,nome_cliente) VALUES(2,'Adriano');
+insert into clientes( id_cliente,nome_cliente) VALUES(3,'Toni');
+
+insert into produtos( id_produto, nome_produto) VALUES(1,'Celta');
+insert into produtos( id_produto, nome_produto) VALUES(2,'Uno');
+insert into produtos( id_produto, nome_produto) VALUES(3,'Palio');
+insert into produtos( id_produto, nome_produto) VALUES(4,'Corsa');
+insert into produtos( id_produto, nome_produto) VALUES(5,'Civic');
+insert into produtos( id_produto, nome_produto) VALUES(6,'Fox');
+insert into produtos( id_produto, nome_produto) VALUES(7,'Saveiro');
+
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(101,1,2);
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(102,1,4);
+insert into pedidos( id_pedido, id_cliente, id_produto) VALUES(103,1,6);
+
+
+
+
+
