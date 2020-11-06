@@ -31,17 +31,17 @@ class ProjetoSpringBootApplicationTests {
     @Test
     void testInserirCliente(){
         Cliente cliente1 = new Cliente();
-        cliente1.setNome("Mineda");
+        cliente1.setNomeCliente("Mineda");
         clienteRepo.save(cliente1);
-        assertNotNull(cliente1.getId());
+        assertNotNull(cliente1.getIdCliente());
     }
     @Test
     void testInserirProduto(){
 
         Produto produto1 = new Produto();
-        produto1.setNome("Gol");
+        produto1.setNomeProduto("Gol");
         produtoRepo.save(produto1);
-        assertNotNull(produto1.getId());
+        assertNotNull(produto1.getIdProduto());
     }
     @Test
     void testInserirPedidos(){

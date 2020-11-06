@@ -1,10 +1,14 @@
 package com.projeto.TopicosEspeciais.projetoSpringBoot.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,23 +18,38 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private Long id;
+    private Long idCliente;
 
     @Column(name = "nome_cliente")
-    private String nome;
+    private String nomeCliente;
 
-    public Long getId(){
-        return this.id;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idCliente")
+    private Set<Produto> produtosComprados;
+
+
+
+
+
+    public Long getIdCliente(){
+        return this.idCliente;
     }
-    public void setId(Long id){
-        this.id=id;
+    public void setIdCliente(Long idCliente){
+        this.idCliente=idCliente;
     }
 
     
-    public String getNome(){
-        return this.nome;
+    public String getNomeCliente(){
+        return this.nomeCliente;
     }
-    public void setNome(String nome){
-        this.nome= nome;
+    public void setNomeCliente(String nomeCliente){
+        this.nomeCliente= nomeCliente;
+    }
+
+    public Set<Produto> getProdutosComprados() {
+        return produtosComprados;
+    }
+
+    public void setProdutosComprados(Set<Produto> produtosComprados) {
+        this.produtosComprados = produtosComprados;
     }
 }

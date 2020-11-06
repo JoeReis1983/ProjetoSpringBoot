@@ -1,7 +1,14 @@
 package com.projeto.TopicosEspeciais.projetoSpringBoot.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -9,37 +16,35 @@ import javax.persistence.Table;
 public class Pedidos {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")
-    private Long id;
-
-    @Id
-    @Column(name = "id_produto")
-    private Long idProduto;
-
-    @Id
-    @Column(name = "id_cliente")
-    private Long idCliente;
-
-
-    public Long getId(){
-        return this.id;
-    }
-    public void setId(Long id){
-        this.id=id;
-    }
+    private Long idPedido;
     
-    public Long getIdProduto(){
-        return this.idProduto;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_cliente") 
+    private Cliente idCliente;
+
+    
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_produto") 
+    private Produto idProduto;
+
+    public Long getIdPedido(){
+        return this.idPedido;
     }
-    public void setIdProduto(Long idProduto){
-        this.idProduto= idProduto;
+    public void setIdPedido(Long idPedido){
+        this.idPedido=idPedido;
     }
 
-    public Long getIdCliente(){
-        return this.idCliente;
+    public Cliente getIdCliente() {
+        return idCliente;
     }
-    public void setIdCliente(Long idCliente){
-        this.idCliente= idCliente;
+
+    public void setIdCliente(Cliente idCliente) {
+        this.idCliente = idCliente;
     }
+
+ 
+    
 }
     
